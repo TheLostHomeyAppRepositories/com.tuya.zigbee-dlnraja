@@ -210,4 +210,8 @@ module.exports = doorwindowsensor_4;
       }
     }
   }
+<<<<<<< HEAD
   */
+=======
+  */
+>>>>>>> master

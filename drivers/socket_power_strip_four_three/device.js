@@ -32,4 +32,8 @@ class socket_power_strip_four_three extends ZigBeeDevice {
 
 }
 
+<<<<<<< HEAD
 module.exports = socket_power_strip_four_three;
+=======
+module.exports = socket_power_strip_four_three;
+>>>>>>> master

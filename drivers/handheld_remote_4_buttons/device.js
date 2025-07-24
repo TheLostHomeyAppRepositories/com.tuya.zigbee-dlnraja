@@ -395,4 +395,8 @@ module.exports = handheld_remote_4_buttons;
       }
     }
   }
+<<<<<<< HEAD
   */
+=======
+  */
+>>>>>>> master

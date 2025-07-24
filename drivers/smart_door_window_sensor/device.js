@@ -458,4 +458,8 @@ module.exports = smart_door_window_sensor;
         }
       }
     }
+<<<<<<< HEAD
   } */
+=======
+  } */
+>>>>>>> master

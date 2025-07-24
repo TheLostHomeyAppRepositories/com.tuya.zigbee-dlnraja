@@ -39,4 +39,8 @@ class relay_board_2_channel extends ZigBeeDevice {
 
 }
 
+<<<<<<< HEAD
 module.exports = relay_board_2_channel;
+=======
+module.exports = relay_board_2_channel;
+>>>>>>> master

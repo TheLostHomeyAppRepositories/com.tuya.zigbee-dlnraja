@@ -139,4 +139,8 @@ module.exports = christmas_lights;
 // The device does not report any of these attributes, so the app has to poll the device to get the current state.
 // The device does report the on/off state, but the app does not use this, because it is not reliable.
 // The device also reports the current mode, but the app does not use this, because it is not reliable.
+<<<<<<< HEAD
 // The device does not report the current dim level, color or effect, so the app has to poll the device to get the current state.
+=======
+// The device does not report the current dim level, color or effect, so the app has to poll the device to get the current state.
+>>>>>>> master

@@ -319,4 +319,8 @@ module.exports = waterdetector;
       }
     }
   }
+<<<<<<< HEAD
 } */
+=======
+} */
+>>>>>>> master

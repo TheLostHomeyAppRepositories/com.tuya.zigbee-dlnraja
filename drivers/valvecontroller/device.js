@@ -25,4 +25,8 @@ class valvecontroller extends ZigBeeDevice {
 
 }
 
+<<<<<<< HEAD
 module.exports = valvecontroller;
+=======
+module.exports = valvecontroller;
+>>>>>>> master

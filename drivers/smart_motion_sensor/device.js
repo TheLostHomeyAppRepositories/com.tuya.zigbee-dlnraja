@@ -425,4 +425,8 @@ module.exports = smart_motion_sensor;
         }
       }
     }
+<<<<<<< HEAD
   } */
+=======
+  } */
+>>>>>>> master

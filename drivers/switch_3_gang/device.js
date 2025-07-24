@@ -32,4 +32,8 @@ class switch_3_gang extends ZigBeeDevice {
 
 }
 
+<<<<<<< HEAD
 module.exports = switch_3_gang;
+=======
+module.exports = switch_3_gang;
+>>>>>>> master

@@ -847,4 +847,8 @@ module.exports = wall_switch_4_gang;
       "bindings": {}
     }
   }
+<<<<<<< HEAD
 } */
+=======
+} */
+>>>>>>> master

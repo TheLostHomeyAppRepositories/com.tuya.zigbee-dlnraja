@@ -38,7 +38,21 @@
       "_TZ3210_dwytrmda",
       "_TZ3210_ol1uhvza",
       "_TZ3000_eg7awg6a",
+<<<<<<< HEAD
       "_TZ3000_eafaa66e"
+=======
+      "_TZ3000_eafaa66e",
+      "Tuya",
+      "Moes",
+      "Aqara",
+      "Xiaomi",
+      "Philips",
+      "IKEA",
+      "Osram",
+      "Samsung",
+      "LG",
+      "Bosch"
+>>>>>>> master
     ],
     "productId": [
       "TS130F"
@@ -63,4 +77,8 @@
       }
     }
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> master

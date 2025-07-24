@@ -46,4 +46,8 @@ module.exports = wall_remote_4_gang_2;
 
 
 
+<<<<<<< HEAD
   
+=======
+  
+>>>>>>> master

@@ -30,4 +30,8 @@ class doorwindowsensor2 extends ZigBeeDevice {
 
 }
 
+<<<<<<< HEAD
 module.exports = doorwindowsensor2;
+=======
+module.exports = doorwindowsensor2;
+>>>>>>> master

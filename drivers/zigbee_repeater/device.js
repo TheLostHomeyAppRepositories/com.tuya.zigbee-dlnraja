@@ -229,4 +229,8 @@ module.exports = zigbeerepeater;
       }
     }
   }
+<<<<<<< HEAD
 } */
+=======
+} */
+>>>>>>> master

@@ -362,4 +362,8 @@ module.exports = lcdtemphumidsensor2;
         }
       }
     }
+<<<<<<< HEAD
   } */
+=======
+  } */
+>>>>>>> master

@@ -359,4 +359,8 @@ module.exports = motion_sensor_2;
 	  "bindings": {}
 	}
   }
+<<<<<<< HEAD
 } */
+=======
+} */
+>>>>>>> master

@@ -30,4 +30,8 @@ class plug extends ZigBeeDevice {
 
 }
 
+<<<<<<< HEAD
 module.exports = plug;
+=======
+module.exports = plug;
+>>>>>>> master

@@ -62,4 +62,8 @@ class smart_knob_switch extends ZigBeeDevice {
 
 }
 
+<<<<<<< HEAD
 module.exports = smart_knob_switch;
+=======
+module.exports = smart_knob_switch;
+>>>>>>> master

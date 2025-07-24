@@ -25,4 +25,8 @@ class smart_switch extends ZigBeeDevice {
 
 }
 
+<<<<<<< HEAD
 module.exports = smart_switch;
+=======
+module.exports = smart_switch;
+>>>>>>> master

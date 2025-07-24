@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿version: 2
+=======
+version: 2
+>>>>>>> master
 updates:
   - package-ecosystem: npm
     directory: "/"

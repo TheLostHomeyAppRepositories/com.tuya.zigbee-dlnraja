@@ -64,4 +64,8 @@ class lcdtemphumidsensor extends ZigBeeDevice {
 
 }
 
+<<<<<<< HEAD
 module.exports = lcdtemphumidsensor;
+=======
+module.exports = lcdtemphumidsensor;
+>>>>>>> master

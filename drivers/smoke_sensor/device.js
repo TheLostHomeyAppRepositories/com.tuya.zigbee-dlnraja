@@ -284,4 +284,8 @@ module.exports = smoke_sensor;
       }
     }
   }
+<<<<<<< HEAD
  */
+=======
+ */
+>>>>>>> master

@@ -5,8 +5,17 @@
     "nl": "Regensensor"
   },
   "class": "sensor",
+<<<<<<< HEAD
   "platforms": ["local"],
   "connectivity": ["zigbee"],
+=======
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+>>>>>>> master
   "capabilities": [
     "measure_battery",
     "alarm_battery",
@@ -48,7 +57,21 @@
   },
   "zigbee": {
     "manufacturerName": [
+<<<<<<< HEAD
       "_TZ3210_tgvtvdoc"
+=======
+      "_TZ3210_tgvtvdoc",
+      "Tuya",
+      "Moes",
+      "Aqara",
+      "Xiaomi",
+      "Philips",
+      "IKEA",
+      "Osram",
+      "Samsung",
+      "LG",
+      "Bosch"
+>>>>>>> master
     ],
     "productId": [
       "TS0207"

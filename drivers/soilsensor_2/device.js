@@ -146,4 +146,8 @@ module.exports = soilsensor2;
         ]
       }
     ],
+<<<<<<< HEAD
 */
+=======
+*/
+>>>>>>> master

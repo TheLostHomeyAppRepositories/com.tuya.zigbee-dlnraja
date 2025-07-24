@@ -301,4 +301,8 @@ module.exports = smart_remote_4b;
       }
     }
   }
+<<<<<<< HEAD
 } */
+=======
+} */
+>>>>>>> master

@@ -690,4 +690,8 @@ module.exports = dimmable_led_strip;
       "bindings": {}
     }
   }
+<<<<<<< HEAD
 } */
+=======
+} */
+>>>>>>> master

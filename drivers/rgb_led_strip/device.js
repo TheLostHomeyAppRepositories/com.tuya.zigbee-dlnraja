@@ -690,4 +690,8 @@ module.exports = rgb_led_strip;
       "bindings": {}
     }
   }
+<<<<<<< HEAD
 } */
+=======
+} */
+>>>>>>> master

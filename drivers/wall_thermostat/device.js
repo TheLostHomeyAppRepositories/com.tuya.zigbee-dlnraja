@@ -454,4 +454,8 @@ module.exports = WallThermostatDevice;
       }
     }
   }
+<<<<<<< HEAD
 */
+=======
+*/
+>>>>>>> master

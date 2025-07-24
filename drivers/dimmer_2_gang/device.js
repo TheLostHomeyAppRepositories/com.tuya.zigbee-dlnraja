@@ -33,4 +33,8 @@ class dimmer_2_gang extends ZigBeeDevice {
 
 }
 
+<<<<<<< HEAD
 module.exports = dimmer_2_gang;
+=======
+module.exports = dimmer_2_gang;
+>>>>>>> master

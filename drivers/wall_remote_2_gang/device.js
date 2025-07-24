@@ -46,4 +46,8 @@ class wall_remote_2_gang extends ZigBeeDevice {
 
 }
 
+<<<<<<< HEAD
 module.exports = wall_remote_2_gang;
+=======
+module.exports = wall_remote_2_gang;
+>>>>>>> master
