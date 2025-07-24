@@ -19,36 +19,58 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verbose - Affichage du chemin courant
+        run: |
+          echo "[VERBOSE] Working directory: $(pwd)"
+          echo "[VERBOSE] Listing files:"
+          ls -al
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
+      - name: Verbose - Version Node.js
+        run: |
+          echo "[VERBOSE] Node version: $(node -v)"
+          echo "[VERBOSE] NPM version: $(npm -v)"
 
       - name: Install dependencies
-        run: npm ci
+        run: |
+          echo "[VERBOSE] Installing dependencies..."
+          npm ci
+          echo "[VERBOSE] Dependencies installed."
+          ls -al node_modules || echo "[VERBOSE] node_modules not found"
 
       - name: 🔧 Analyse et correction automatique SDK 3
         run: |
-          echo "🔧 Analyse et correction automatique SDK 3 sur tous les drivers..."
-          node scripts/bench-ia-enhanced.js || echo "Benchmark IA exécuté"
-          node scripts/optimize_sdk3.js || echo "Optimisation SDK3 exécutée"
+          echo "[VERBOSE] Running SDK3 analysis and optimization..."
+          node scripts/bench-ia-enhanced.js || echo "[VERBOSE] Benchmark IA executed with warnings"
+          node scripts/optimize_sdk3.js || echo "[VERBOSE] SDK3 optimization executed with warnings"
+          echo "[VERBOSE] SDK3 analysis and optimization completed."
 
       - name: Update manifest
-        run: npm run update-manifest
+        run: |
+          echo "[VERBOSE] Running update-manifest..."
+          npm run update-manifest
+          echo "[VERBOSE] update-manifest completed."
 
       - name: Validate Homey app (if token present)
         run: |
+          echo "[VERBOSE] Checking for HOMEY_PAT token..."
           if [ -n "${{ secrets.HOMEY_PAT }}" ]; then
+            echo "[VERBOSE] HOMEY_PAT found, running validation."
             npx homey app validate
           else
-            echo "No Homey token, skipping validation."
+            echo "[VERBOSE] No Homey token, skipping validation."
           fi
 
       - name: Logs & monitoring (powered by GitHub Actions)
         run: |
           echo "[CI] Build terminé à $(date -u)"
           echo "[CI] Monitoring automatisé - powered by GitHub Actions, orchestré par GPT-4/ Cursor"
+          echo "[VERBOSE] End of CI workflow."
 
   lint-test:
     runs-on: ubuntu-latest

@@ -242,6 +242,18 @@ module.exports = TuyaPlug;`
           
           node scripts/processing/create_templates.js
           
+      - name: 📋 Générer la todo list drivers versionnée
+        run: |
+          echo "Génération automatique de drivers/TODO_DRIVERS.md..."
+          node scripts/generate_todo_drivers.js
+
+      - name: 📝 Commit todo drivers si modifié
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add drivers/TODO_DRIVERS.md
+          git diff --cached --quiet || git commit -m "📝 [$(date -u '+%Y-%m-%d %H:%M UTC')] MAJ automatique TODO_DRIVERS.md (todo drivers mensuelle)" && git push
+          
       - name: 📝 Commit processing results
         run: |
           git config --local user.email "action@github.com"
