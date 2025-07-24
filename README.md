@@ -235,6 +235,27 @@ Créer la solution la plus complète, automatisée et résiliente pour intégrer
 
 ---
 
+## 📊 Rapports & Suivi Automatisé
+
+Tous les rapports finaux générés par les workflows sont disponibles dans le dépôt :
+
+- [Rapports de fusion Lot1 & History](logs/merge/)
+- [Rapports d'optimisation SDK3](logs/optimization/)
+- [Benchmarks IA](logs/benchmark/)
+- [Rapports de recherche multi-sources](logs/research/)
+- [Plans de traitement mensuel](logs/processing/)
+- [Maintenance forks & branches](logs/maintenance/)
+- [Logs d'enrichissement](logs/merge_enrich_drivers.log)
+- [Rapports de backup](logs/backup/)
+- [Rapports de build/test](logs/build/)
+- [Rapports de monitoring](logs/monitoring/)
+
+### 📋 Todo List Drivers (versionnée)
+
+- [drivers/TODO_DRIVERS.md](drivers/TODO_DRIVERS.md) : Liste complète, versionnée et à jour de tous les drivers, leur statut (implémenté, en cours, à venir), leurs features, et la compatibilité SDK Homey.
+
+---
+
 ## 🏆 Statut global
 - **Projet 100% opérationnel, optimisé, automatisé, multilingue, sécurisé**
 - **Mode YOLO Intelligent** : Activé

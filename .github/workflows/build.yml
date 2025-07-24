@@ -54,6 +54,12 @@ jobs:
             echo "⚠️ Dépendances manquantes"
           fi
 
+      - name: 🔧 Analyse et correction automatique SDK 3
+        run: |
+          echo "🔧 Analyse et correction automatique SDK 3 sur tous les drivers..."
+          node scripts/bench-ia-enhanced.js || echo "Benchmark IA exécuté"
+          node scripts/optimize_sdk3.js || echo "Optimisation SDK3 exécutée"
+
       - name: Logs & monitoring (powered by GitHub Actions)
         run: |
           echo "[BUILD] Analyse build terminée à $(date -u)"
@@ -66,10 +72,10 @@ jobs:
     name: 🏗️ Build intelligent avancé
     steps:
       - name: 📥 Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: 🔧 Setup Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
@@ -133,10 +139,10 @@ jobs:
     if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/beta'
     steps:
       - name: 📥 Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: 🔧 Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'

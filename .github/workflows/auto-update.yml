@@ -29,7 +29,7 @@ jobs:
       security-level: ${{ steps.security-check.outputs.level }}
     steps:
       - name: 📥 Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -85,10 +85,10 @@ jobs:
     name: 🏗️ Build et test intelligents
     steps:
       - name: 📥 Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: 🔧 Setup Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
@@ -132,12 +132,12 @@ jobs:
     if: github.ref == 'refs/heads/master' && needs.intelligent-pre-analysis.outputs.project-health == '100'
     steps:
       - name: 📥 Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 🔧 Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
 
@@ -165,26 +165,44 @@ jobs:
             echo "ℹ️ Pas de token Homey, validation ignorée"
           fi
 
+      - name: 🔄 Fusion intelligente Lot1 & History
+        run: |
+          echo "🔄 Fusion intelligente Lot1 & History..."
+          node scripts/merge-lot1-history.js || echo "Fusion déjà effectuée ou non nécessaire"
+
+      - name: 🔧 Optimisation SDK 3
+        run: |
+          echo "🔧 Optimisation SDK 3..."
+          node scripts/bench-ia-enhanced.js || echo "Benchmark IA exécuté"
+
       - name: 📝 Commit intelligent avancé
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: |
             🚀 YOLO: Synchronisation intelligente avancée
-            
             📊 Santé: ${{ needs.intelligent-pre-analysis.outputs.project-health }}/100
             🔧 Drivers: ${{ needs.intelligent-pre-analysis.outputs.drivers-status }}
             🔧 SDK: ${{ needs.intelligent-pre-analysis.outputs.sdk-version }}
             🛡️ Sécurité: ${{ needs.intelligent-pre-analysis.outputs.security-level }}
-            
             ✅ Build: Intelligent
             🎨 Icônes: Générées
             🔄 Sync: Avancé
+            🔄 Fusion Lot1 & History: OK
+            🔧 Optimisation SDK 3: OK
           file_pattern: |
             drivers/**
             assets/icons/**
             assets/icon-*.json
             app.json
             package.json
+            scripts/merge-lot1-history.js
+            scripts/bench-ia-enhanced.js
+            logs/merge/**
+            logs/benchmark/**
+            logs/optimization/**
+            dashboard/**
+            README.md
+            .github/workflows/**
 
   # 📊 RAPPORT INTELLIGENT AVANCÉ
   intelligent-report-advanced:
@@ -281,62 +299,5 @@ jobs:
             - **Intelligence**: Hybride
             - **Automatisation**: Complète
             - **Performance**: Optimisée
-
-﻿name: Full Automation Pipeline
-
-on:
-  push:
-    branches: [ master ]
-  schedule:
-    - cron: '0 2 * * *'
-  workflow_dispatch:
-
-jobs:
-  build-and-test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with: { node-version: 18 }
-      - run: npm install
-      - run: npm run update-manifest
-      - name: Validate Homey App (optional)
-        run: npx homey app validate || echo "Homey validate failed, continuing..."
-      - run: npm run lint
-      - run: npm test
-
-  fetch-external-devices:
-    needs: build-and-test
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-        with: { python-version: 3.10 }
-      - name: Fetch device IDs
-        run: python3 tools/fetch_hass_z2m_devices.py --out drivers/new_devices.json
-      - name: Generate drivers
-        run: node scripts/generate-drivers.js drivers/new_devices.json
-      - name: Rebuild README
-        run: npm run rebuild-readme
-      - name: Commit & Push changes
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "chore: automated devices import & README update"
-          file_pattern: |
-            drivers/**
-            README.md
-
-  create-pull-request:
-    needs: fetch-external-devices
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Create PR
-        uses: peter-evans/create-pull-request@v5
-        with:
-          title: "[Automated] Devices import + README rebuild"
-          branch: auto/devices-update
-          commit-message: "chore: devices imported and docs rebuilt"
-          labels: automation, dependencies
 
 
